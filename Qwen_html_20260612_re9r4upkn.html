@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="PROF TECH - Expert Phone & Laptop Repairs and Fast Courier Services in Nairobi. Trusted, reliable, affordable." />
+<title>PROF TECH — Expert Repairs & Reliable Courier Services in Nairobi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+/* =========================
+   ROOT VARIABLES & RESET
+   ========================= */
+:root{
+  /* Repairs palette */
+  --repair-blue:#0D6EFD;
+  --repair-blue-dark:#0A58CA;
+  --repair-charcoal:#1A1A1A;
+  --repair-light:#F5F7FA;
+  --repair-white:#FFFFFF;
+
+  /* Courier palette */
+  --courier-warm:#F5A000;
+  --courier-deep:#E67E22;
+  --courier-charcoal:#2B2B2B;
+  --courier-white:#FFFFFF;
+
+  /* Shared */
+  --text-dark:#111827;
+  --text-muted:#6B7280;
+  --radius-sm:10px;
+  --radius-md:16px;
+  --radius-lg:24px;
+  --radius-xl:32px;
+  --shadow-sm:0 2px 8px rgba(0,0,0,.06);
+  --shadow-md:0 8px 24px rgba(0,0,0,.08);
+  --shadow-lg:0 20px 50px rgba(0,0,0,.12);
+  --shadow-blue:0 20px 40px rgba(13,110,253,.25);
+  --shadow-orange:0 20px 40px rgba(245,160,0,.3);
+  --transition:cubic-bezier(.4,0,.2,1);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  color:var(--text-dark);
+  line-height:1.6;
+  background:#fff;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+h1,h2,h3,h4{font-family:'Plus Jakarta Sans','Inter',sans-serif;line-height:1.15;letter-spacing:-.02em}
+
+.container{max-width:1240px;margin:0 auto;padding:0 24px}
+
+/* =========================
+   NAVIGATION
+   ========================= */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  padding:20px 0;
+  transition:all .35s var(--transition);
+  background:transparent;
+}
+.nav.scrolled{
+  background:rgba(255,255,255,.85);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  padding:14px 0;
+  box-shadow:0 1px 0 rgba(0,0,0,.06);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:800;font-size:22px;letter-spacing:-.03em;
+  color:#fff;
+  transition:color .3s;
+  display:flex;align-items:center;gap:8px;
+}
+.logo-mark{
+  width:34px;height:34px;border-radius:10px;
+  background:linear-gradient(135deg,var(--repair-blue),var(--courier-warm));
+  display:grid;place-items:center;color:#fff;font-size:14px;font-weight:900;
+  box-shadow:0 6px 18px rgba(13,110,253,.35);
+}
+.nav.scrolled .logo{color:var(--repair-charcoal)}
+.nav-menu{display:flex;align-items:center;gap:36px;list-style:none}
+.nav-menu a{
+  font-size:14.5px;font-weight:500;color:rgba(255,255,255,.9);
+  position:relative;transition:color .25s;
+}
+.nav.scrolled .nav-menu a{color:var(--repair-charcoal)}
+.nav-menu a::after{
+  content:'';position:absolute;left:0;bottom:-6px;
+  width:0;height:2px;background:var(--repair-blue);
+  transition:width .3s var(--transition);
+}
+.nav-menu a:hover::after{width:100%}
+.nav-cta{
+  background:#25D366;color:#fff !important;
+  padding:10px 18px;border-radius:100px;
+  font-weight:600;font-size:14px;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:transform .25s, box-shadow .25s;
+}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(37,211,102,.35)}
+.nav-cta::after{display:none !important}
+.menu-toggle{display:none;width:40px;height:40px;place-items:center;color:#fff}
+.nav.scrolled .menu-toggle{color:var(--repair-charcoal)}
+
+/* =========================
+   HERO SPLIT
+   ========================= */
+.hero{
+  position:relative;min-height:100vh;
+  display:grid;grid-template-columns:1fr 1fr;
+  overflow:hidden;
+}
+.hero-half{
+  position:relative;min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  padding:120px 48px 80px;
+  overflow:hidden;
+  cursor:pointer;
+  transition:flex .5s var(--transition);
+}
+.hero-half::before{
+  content:'';position:absolute;inset:0;
+  background-size:cover;background-position:center;
+  transition:transform .8s var(--transition), filter .5s;
+  filter:brightness(.55);
+}
+.hero-half:hover::before{transform:scale(1.05)}
+.hero-repairs::before{
+  background-image:url('https://images.unsplash.com/photo-1591290619762-65ec95040f4d?auto=format&fit=crop&w=1600&q=80');
+}
+.hero-courier::before{
+  background-image:url('https://images.unsplash.com/photo-1612278675615-7b093b07772d?auto=format&fit=crop&w=1600&q=80');
+}
+.hero-half::after{
+  content:'';position:absolute;inset:0;
+  z-index:1;
+}
+.hero-repairs::after{
+  background:linear-gradient(135deg,rgba(13,110,253,.85) 0%,rgba(26,26,26,.7) 100%);
+}
+.hero-courier::after{
+  background:linear-gradient(135deg,rgba(230,126,34,.85) 0%,rgba(43,43,43,.7) 100%);
+}
+.hero-content{
+  position:relative;z-index:2;color:#fff;
+  max-width:520px;width:100%;
+  opacity:0;transform:translateY(30px);
+  animation:heroIn 1s var(--transition) .2s forwards;
+}
+@keyframes heroIn{to{opacity:1;transform:translateY(0)}}
+.hero-label{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 16px;border-radius:100px;
+  background:rgba(255,255,255,.15);
+  backdrop-filter:blur(10px);
+  font-size:12px;font-weight:600;letter-spacing:.15em;
+  margin-bottom:24px;
+  border:1px solid rgba(255,255,255,.2);
+}
+.hero-label .dot{width:8px;height:8px;border-radius:50%;background:#25D366;box-shadow:0 0 0 4px rgba(37,211,102,.3);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 4px rgba(37,211,102,.3)}50%{box-shadow:0 0 0 8px rgba(37,211,102,0)}}
+.hero h1{
+  font-size:clamp(34px,4.5vw,56px);font-weight:800;
+  margin-bottom:18px;letter-spacing:-.03em;
+}
+.hero p{
+  font-size:clamp(15px,1.3vw,18px);
+  opacity:.92;margin-bottom:32px;max-width:440px;
+}
+.hero-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:16px 32px;border-radius:100px;
+  font-weight:600;font-size:15px;letter-spacing:.01em;
+  transition:all .3s var(--transition);
+  background:#fff;color:var(--repair-charcoal);
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+.hero-btn:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.3)}
+.hero-btn .arrow{transition:transform .3s}
+.hero-btn:hover .arrow{transform:translateX(4px)}
+
+/* Animated divider */
+.hero-divider{
+  position:absolute;top:0;bottom:0;left:50%;
+  width:2px;z-index:5;
+  background:linear-gradient(180deg,transparent,rgba(255,255,255,.5),transparent);
+  transform:translateX(-50%);
+}
+.hero-divider::before{
+  content:'';position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:60px;height:60px;border-radius:50%;
+  background:#fff;
+  display:grid;place-items:center;
+  box-shadow:0 10px 40px rgba(0,0,0,.3);
+  font-size:22px;
+}
+.hero-divider::after{
+  content:'⚡';position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  font-size:22px;z-index:2;
+  background:linear-gradient(135deg,var(--repair-blue),var(--courier-warm));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  font-weight:900;
+}
+.hero-divider .line-glow{
+  position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:2px;height:100%;
+  background:linear-gradient(180deg,transparent,#fff,transparent);
+  animation:glowDown 3s infinite linear;
+}
+@keyframes glowDown{
+  0%{top:-50%}100%{top:100%}
+}
+
+/* Floating shapes */
+.hero-shape{
+  position:absolute;border-radius:50%;
+  filter:blur(60px);opacity:.4;z-index:1;
+  animation:float 8s ease-in-out infinite;
+}
+.hero-repairs .hero-shape{background:#0D6EFD;width:300px;height:300px;top:10%;left:-10%}
+.hero-courier .hero-shape{background:#F5A000;width:300px;height:300px;bottom:10%;right:-10%;animation-delay:-4s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-30px)}}
+
+/* =========================
+   SECTION BASE
+   ========================= */
+section{padding:100px 0;position:relative}
+.section-head{text-align:center;max-width:720px;margin:0 auto 60px}
+.section-tag{
+  display:inline-block;padding:6px 14px;border-radius:100px;
+  font-size:12px;font-weight:700;letter-spacing:.15em;
+  margin-bottom:16px;
+}
+.section-head h2{
+  font-size:clamp(30px,3.5vw,46px);font-weight:800;
+  margin-bottom:16px;
+}
+.section-head p{font-size:17px;color:var(--text-muted)}
+
+/* =========================
+   REPAIRS SECTION
+   ========================= */
+.repairs-section{background:var(--repair-light);position:relative;overflow:hidden}
+.repairs-section::before{
+  content:'';position:absolute;top:-200px;right:-200px;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(13,110,253,.08),transparent 70%);
+}
+.repairs-tag{background:rgba(13,110,253,.1);color:var(--repair-blue)}
+.repairs-section h2 span{color:var(--repair-blue)}
+
+/* Repairs hero banner */
+.repairs-banner{
+  position:relative;border-radius:var(--radius-xl);
+  overflow:hidden;margin-bottom:80px;
+  min-height:420px;
+  display:flex;align-items:center;
+  background:linear-gradient(135deg,#0A58CA 0%,#0D6EFD 50%,#1A1A1A 100%);
+  color:#fff;padding:60px;
+  box-shadow:var(--shadow-blue);
+}
+.repairs-banner::before{
+  content:'';position:absolute;inset:0;
+  background-image:url('https://images.unsplash.com/photo-1601972599720-36938d4ecd31?auto=format&fit=crop&w=1400&q=80');
+  background-size:cover;background-position:center;
+  opacity:.25;mix-blend-mode:overlay;
+}
+.repairs-banner-content{position:relative;z-index:2;max-width:600px}
+.repairs-banner h3{font-size:clamp(28px,3vw,40px);font-weight:800;margin-bottom:14px}
+.repairs-banner p{font-size:17px;opacity:.9;margin-bottom:24px}
+.banner-stats{display:flex;gap:40px;flex-wrap:wrap;margin-top:30px}
+.banner-stat strong{display:block;font-size:32px;font-weight:800;font-family:'Plus Jakarta Sans'}
+.banner-stat span{font-size:13px;opacity:.8;letter-spacing:.05em}
+
+/* Floating repair icons */
+.floating-icons{position:absolute;right:40px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:16px}
+.float-icon{
+  width:56px;height:56px;border-radius:16px;
+  background:rgba(255,255,255,.15);backdrop-filter:blur(10px);
+  display:grid;place-items:center;font-size:24px;
+  border:1px solid rgba(255,255,255,.2);
+  animation:float 4s ease-in-out infinite;
+}
+.float-icon:nth-child(2){animation-delay:-1.3s}
+.float-icon:nth-child(3){animation-delay:-2.6s}
+
+/* Services grid */
+.services-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:24px;margin-bottom:100px;
+}
+.service-card{
+  background:#fff;border-radius:var(--radius-lg);
+  padding:32px;transition:all .4s var(--transition);
+  border:1px solid rgba(0,0,0,.04);
+  position:relative;overflow:hidden;
+}
+.service-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--repair-blue),#4F9EFF);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .4s var(--transition);
+}
+.service-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{
+  width:56px;height:56px;border-radius:14px;
+  background:rgba(13,110,253,.1);color:var(--repair-blue);
+  display:grid;place-items:center;font-size:24px;
+  margin-bottom:20px;transition:all .3s;
+}
+.service-card:hover .service-icon{background:var(--repair-blue);color:#fff;transform:rotate(-6deg) scale(1.05)}
+.service-card h3{font-size:19px;font-weight:700;margin-bottom:8px}
+.service-card p{color:var(--text-muted);font-size:14.5px}
+
+/* Before/After slider */
+.ba-section{margin-bottom:100px}
+.ba-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.ba-card{
+  background:#fff;border-radius:var(--radius-lg);
+  overflow:hidden;box-shadow:var(--shadow-sm);
+  transition:all .4s var(--transition);
+}
+.ba-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
+.ba-slider{
+  position:relative;width:100%;aspect-ratio:4/3;
+  overflow:hidden;cursor:ew-resize;user-select:none;
+  background:#000;
+}
+.ba-slider img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba-after-wrap{position:absolute;top:0;left:0;width:50%;height:100%;overflow:hidden}
+.ba-after-wrap img{position:absolute;top:0;left:0;width:200%;max-width:none;height:100%;object-fit:cover}
+.ba-handle{
+  position:absolute;top:0;bottom:0;left:50%;width:3px;
+  background:#fff;transform:translateX(-50%);
+  box-shadow:0 0 10px rgba(0,0,0,.4);
+}
+.ba-handle::before{
+  content:'⇆';position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:40px;height:40px;border-radius:50%;
+  background:#fff;color:var(--repair-blue);
+  display:grid;place-items:center;font-weight:900;
+  box-shadow:0 4px 14px rgba(0,0,0,.3);
+}
+.ba-label{
+  position:absolute;top:14px;padding:5px 12px;border-radius:100px;
+  font-size:11px;font-weight:700;letter-spacing:.1em;
+  color:#fff;z-index:3;
+}
+.ba-label.before{left:14px;background:rgba(0,0,0,.6)}
+.ba-label.after{right:14px;background:var(--repair-blue)}
+.ba-info{padding:20px 22px;display:flex;justify-content:space-between;align-items:center}
+.ba-info h4{font-size:16px;font-weight:700}
+.ba-info span{font-size:13px;color:var(--repair-blue);font-weight:600}
+
+/* Why choose us */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-bottom:100px}
+.why-card{
+  background:#fff;border-radius:var(--radius-lg);
+  padding:32px 24px;text-align:center;
+  transition:all .4s var(--transition);
+  border:1px solid rgba(0,0,0,.04);
+}
+.why-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
+.why-icon{
+  width:64px;height:64px;border-radius:18px;
+  background:linear-gradient(135deg,var(--repair-blue),#4F9EFF);
+  color:#fff;display:grid;place-items:center;
+  margin:0 auto 18px;font-size:26px;
+  box-shadow:0 10px 24px rgba(13,110,253,.3);
+}
+.why-card h3{font-size:17px;font-weight:700;margin-bottom:8px}
+.why-card p{font-size:14px;color:var(--text-muted)}
+
+/* Reviews */
+.reviews-wrap{position:relative;margin-bottom:60px}
+.reviews-track{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:10px 4px 30px;-ms-overflow-style:none;scrollbar-width:none}
+.reviews-track::-webkit-scrollbar{display:none}
+.review-card{
+  flex:0 0 360px;scroll-snap-align:start;
+  background:#fff;border-radius:var(--radius-lg);
+  padding:28px;box-shadow:var(--shadow-sm);
+  border:1px solid rgba(0,0,0,.04);
+  transition:all .3s;
+}
+.review-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.review-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.review-avatar{
+  width:48px;height:48px;border-radius:50%;
+  background:linear-gradient(135deg,var(--repair-blue),#4F9EFF);
+  color:#fff;display:grid;place-items:center;
+  font-weight:700;font-size:17px;
+}
+.review-name{font-weight:700;font-size:15px}
+.review-date{font-size:12px;color:var(--text-muted)}
+.review-stars{color:#FFB800;font-size:14px;letter-spacing:2px;margin-bottom:12px}
+.review-text{font-size:14.5px;color:var(--text-muted);line-height:1.65}
+
+.review-form{
+  max-width:640px;margin:0 auto;
+  background:#fff;border-radius:var(--radius-lg);
+  padding:36px;box-shadow:var(--shadow-sm);
+}
+.review-form h3{font-size:22px;font-weight:700;margin-bottom:6px;text-align:center}
+.review-form > p{text-align:center;color:var(--text-muted);font-size:14px;margin-bottom:24px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.form-field input,.form-field textarea,.form-field select{
+  width:100%;padding:14px 16px;border-radius:12px;
+  border:1.5px solid #E5E7EB;background:#F9FAFB;
+  font-family:inherit;font-size:14.5px;
+  transition:all .25s;
+}
+.form-field input:focus,.form-field textarea:focus,.form-field select:focus{
+  outline:none;border-color:var(--repair-blue);background:#fff;
+  box-shadow:0 0 0 4px rgba(13,110,253,.1);
+}
+.form-field textarea{resize:vertical;min-height:100px}
+.star-input{display:flex;gap:6px;justify-content:center;margin-bottom:16px;font-size:28px;color:#D1D5DB;cursor:pointer}
+.star-input span{transition:color .15s,transform .15s}
+.star-input span.active,.star-input span:hover,.star-input span:hover ~ span{color:#FFB800}
+.star-input span:hover{transform:scale(1.2)}
+
+/* CTA banner */
+.repair-cta{
+  background:linear-gradient(135deg,#0A58CA 0%,#0D6EFD 50%,#4F9EFF 100%);
+  border-radius:var(--radius-xl);
+  padding:70px 50px;color:#fff;text-align:center;
+  position:relative;overflow:hidden;
+  box-shadow:var(--shadow-blue);
+}
+.repair-cta::before{
+  content:'';position:absolute;top:-50%;right:-20%;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.15),transparent 70%);
+}
+.repair-cta h2{font-size:clamp(28px,3vw,40px);font-weight:800;margin-bottom:12px;position:relative}
+.repair-cta p{font-size:17px;opacity:.92;margin-bottom:28px;position:relative}
+.cta-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:16px 32px;border-radius:100px;
+  background:#25D366;color:#fff;
+  font-weight:600;font-size:15px;
+  transition:all .3s var(--transition);
+  box-shadow:0 10px 30px rgba(37,211,102,.4);
+  position:relative;
+}
+.cta-btn:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(37,211,102,.5)}
+
+/* =========================
+   COURIER SECTION
+   ========================= */
+.courier-section{
+  background:linear-gradient(180deg,#FFF8EC 0%,#FFFFFF 100%);
+  position:relative;overflow:hidden;
+}
+.courier-section::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    radial-gradient(circle at 10% 20%,rgba(245,160,0,.08) 0%,transparent 40%),
+    radial-gradient(circle at 90% 80%,rgba(230,126,34,.08) 0%,transparent 40%);
+  pointer-events:none;
+}
+.courier-tag{background:rgba(245,160,0,.15);color:var(--courier-deep)}
+.courier-section h2 span{color:var(--courier-deep)}
+
+/* Courier hero banner */
+.courier-banner{
+  position:relative;border-radius:var(--radius-xl);
+  overflow:hidden;margin-bottom:80px;
+  min-height:420px;
+  display:flex;align-items:center;
+  background:linear-gradient(135deg,#E67E22 0%,#F5A000 60%,#FFC670 100%);
+  color:#fff;padding:60px;
+  box-shadow:var(--shadow-orange);
+}
+.courier-banner::before{
+  content:'';position:absolute;inset:0;
+  background-image:url('https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=1400&q=80');
+  background-size:cover;background-position:center;
+  opacity:.22;mix-blend-mode:overlay;
+}
+.courier-banner-content{position:relative;z-index:2;max-width:600px}
+.courier-banner h3{font-size:clamp(28px,3vw,40px);font-weight:800;margin-bottom:14px}
+.courier-banner p{font-size:17px;opacity:.95;margin-bottom:24px}
+
+/* Route lines decoration */
+.route-lines{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.route-lines svg{position:absolute;width:100%;height:100%;opacity:.35}
+
+/* Courier services */
+.courier-services{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:100px}
+.courier-card{
+  background:#fff;border-radius:var(--radius-lg);
+  padding:32px;transition:all .4s var(--transition);
+  border:1px solid rgba(245,160,0,.1);
+  position:relative;overflow:hidden;
+}
+.courier-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--courier-warm),var(--courier-deep));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .4s var(--transition);
+}
+.courier-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-orange)}
+.courier-card:hover::before{transform:scaleX(1)}
+.courier-icon{
+  width:56px;height:56px;border-radius:14px;
+  background:linear-gradient(135deg,var(--courier-warm),var(--courier-deep));
+  color:#fff;display:grid;place-items:center;font-size:24px;
+  margin-bottom:20px;transition:all .3s;
+  box-shadow:0 8px 20px rgba(245,160,0,.3);
+}
+.courier-card:hover .courier-icon{transform:rotate(6deg) scale(1.05)}
+.courier-card h3{font-size:19px;font-weight:700;margin-bottom:8px}
+.courier-card p{color:var(--text-muted);font-size:14.5px}
+
+/* How it works */
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-bottom:100px;position:relative}
+.how-grid::before{
+  content:'';position:absolute;top:40px;left:15%;right:15%;
+  height:2px;background:repeating-linear-gradient(90deg,var(--courier-warm) 0 8px,transparent 8px 16px);
+  opacity:.4;z-index:0;
+}
+.how-step{
+  background:#fff;border-radius:var(--radius-lg);
+  padding:36px 28px;text-align:center;position:relative;z-index:1;
+  transition:all .4s var(--transition);
+  border:1px solid rgba(245,160,0,.1);
+}
+.how-step:hover{transform:translateY(-6px);box-shadow:var(--shadow-orange)}
+.how-num{
+  width:80px;height:80px;border-radius:50%;
+  background:linear-gradient(135deg,var(--courier-warm),var(--courier-deep));
+  color:#fff;display:grid;place-items:center;
+  font-size:32px;font-weight:800;font-family:'Plus Jakarta Sans';
+  margin:0 auto 20px;
+  box-shadow:0 12px 30px rgba(245,160,0,.35);
+  position:relative;
+}
+.how-num::after{
+  content:'';position:absolute;inset:-6px;border-radius:50%;
+  border:2px dashed var(--courier-warm);opacity:.4;
+  animation:spin 20s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.how-step h3{font-size:19px;font-weight:700;margin-bottom:8px}
+.how-step p{color:var(--text-muted);font-size:14.5px}
+
+/* Coverage map */
+.map-wrap{
+  background:#fff;border-radius:var(--radius-xl);
+  padding:50px;box-shadow:var(--shadow-sm);
+  margin-bottom:100px;
+  border:1px solid rgba(245,160,0,.1);
+}
+.map-layout{display:grid;grid-template-columns:1.3fr 1fr;gap:50px;align-items:center}
+.map-svg{
+  width:100%;aspect-ratio:1;
+  background:linear-gradient(135deg,#FFF3DC,#FFE8BE);
+  border-radius:var(--radius-lg);
+  position:relative;overflow:hidden;
+}
+.map-svg svg{width:100%;height:100%}
+.zone{
+  fill:#fff;stroke:var(--courier-warm);stroke-width:2;
+  transition:all .3s;cursor:pointer;
+}
+.zone:hover{fill:var(--courier-warm);transform-origin:center}
+.zone-label{font-size:11px;font-weight:700;fill:var(--courier-charcoal);pointer-events:none;text-anchor:middle}
+.zone-dot{fill:var(--courier-deep)}
+.route-path{stroke:var(--courier-deep);stroke-width:2;stroke-dasharray:6 4;fill:none;animation:dash 20s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-200}}
+.map-info h3{font-size:26px;font-weight:800;margin-bottom:14px}
+.map-info > p{color:var(--text-muted);margin-bottom:24px}
+.zone-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.zone-list li{
+  list-style:none;display:flex;align-items:center;gap:10px;
+  padding:10px 14px;border-radius:10px;
+  background:#FFF8EC;font-size:14px;font-weight:500;
+  transition:all .25s;
+}
+.zone-list li:hover{background:var(--courier-warm);color:#fff;transform:translateX(4px)}
+.zone-list li::before{content:'📍';font-size:14px}
+
+/* Delivery order form */
+.order-form-wrap{
+  background:linear-gradient(135deg,var(--courier-deep),var(--courier-warm));
+  border-radius:var(--radius-xl);
+  padding:50px;color:#fff;
+  box-shadow:var(--shadow-orange);
+  position:relative;overflow:hidden;
+  margin-bottom:100px;
+}
+.order-form-wrap::before{
+  content:'';position:absolute;top:-100px;right:-100px;
+  width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.15),transparent 70%);
+}
+.order-form-wrap h3{font-size:28px;font-weight:800;margin-bottom:8px;position:relative}
+.order-form-wrap > p{opacity:.92;margin-bottom:28px;position:relative}
+.order-form{display:grid;grid-template-columns:1fr 1fr;gap:14px;position:relative}
+.order-form .full{grid-column:1/-1}
+.order-form input,.order-form textarea{
+  width:100%;padding:14px 16px;border-radius:12px;
+  border:1.5px solid rgba(255,255,255,.3);
+  background:rgba(255,255,255,.15);
+  backdrop-filter:blur(10px);
+  color:#fff;font-family:inherit;font-size:14.5px;
+  transition:all .25s;
+}
+.order-form input::placeholder,.order-form textarea::placeholder{color:rgba(255,255,255,.75)}
+.order-form input:focus,.order-form textarea:focus{
+  outline:none;border-color:#fff;
+  background:rgba(255,255,255,.25);
+  box-shadow:0 0 0 4px rgba(255,255,255,.15);
+}
+.order-form textarea{resize:vertical;min-height:90px}
+.order-submit{
+  padding:16px 32px;border-radius:100px;
+  background:#fff;color:var(--courier-deep);
+  font-weight:700;font-size:15px;
+  display:inline-flex;align-items:center;gap:10px;
+  transition:all .3s var(--transition);
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
+  grid-column:1/-1;justify-self:start;
+}
+.order-submit:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(0,0,0,.3)}
+
+/* Courier reviews */
+.courier-reviews .review-card{background:#fff;border:1px solid rgba(245,160,0,.1)}
+.courier-reviews .review-avatar{background:linear-gradient(135deg,var(--courier-warm),var(--courier-deep))}
+.courier-review-form{
+  max-width:640px;margin:0 auto;
+  background:#fff;border-radius:var(--radius-lg);
+  padding:36px;box-shadow:var(--shadow-sm);
+  border:1px solid rgba(245,160,0,.1);
+}
+.courier-review-form h3{font-size:22px;font-weight:700;margin-bottom:6px;text-align:center}
+.courier-review-form > p{text-align:center;color:var(--text-muted);font-size:14px;margin-bottom:24px}
+.courier-review-form .form-field input:focus,
+.courier-review-form .form-field textarea:focus{
+  border-color:var(--courier-warm);
+  box-shadow:0 0 0 4px rgba(245,160,0,.1);
+}
+
+/* =========================
+   CONTACT
+   ========================= */
+.contact-section{
+  background:var(--courier-charcoal);
+  color:#fff;padding:100px 0 60px;
+  position:relative;overflow:hidden;
+}
+.contact-section::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);
+}
+.contact-section .section-head h2{color:#fff}
+.contact-section .section-head p{color:rgba(255,255,255,.7)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:50px;align-items:start}
+.contact-info{display:flex;flex-direction:column;gap:20px}
+.contact-item{
+  display:flex;gap:18px;align-items:flex-start;
+  padding:22px;border-radius:var(--radius-md);
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  transition:all .3s;
+}
+.contact-item:hover{background:rgba(255,255,255,.08);transform:translateX(4px)}
+.contact-ico{
+  width:48px;height:48px;border-radius:12px;
+  background:linear-gradient(135deg,var(--repair-blue),var(--courier-warm));
+  display:grid;place-items:center;font-size:20px;flex-shrink:0;
+}
+.contact-item h4{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;opacity:.7;margin-bottom:6px}
+.contact-item p,.contact-item a{font-size:15.5px;line-height:1.55}
+.contact-item a:hover{color:var(--courier-warm)}
+.map-embed{
+  border-radius:var(--radius-lg);overflow:hidden;
+  height:100%;min-height:420px;
+  border:1px solid rgba(255,255,255,.1);
+}
+.map-embed iframe{width:100%;height:100%;border:0;filter:grayscale(.3) contrast(1.05)}
+
+/* Footer */
+.footer{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding:30px 0;margin-top:60px;
+  text-align:center;color:rgba(255,255,255,.5);
+  font-size:14px;
+}
+.footer a{color:rgba(255,255,255,.8)}
+
+/* =========================
+   WHATSAPP FLOAT
+   ========================= */
+.wa-float{
+  position:fixed;bottom:24px;right:24px;z-index:999;
+  width:60px;height:60px;border-radius:50%;
+  background:#25D366;color:#fff;
+  display:grid;place-items:center;
+  box-shadow:0 10px 30px rgba(37,211,102,.45);
+  transition:transform .3s;
+  animation:waPulse 3s infinite;
+}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:30px;height:30px}
+@keyframes waPulse{
+  0%,100%{box-shadow:0 10px 30px rgba(37,211,102,.45),0 0 0 0 rgba(37,211,102,.5)}
+  50%{box-shadow:0 10px 30px rgba(37,211,102,.45),0 0 0 18px rgba(37,211,102,0)}
+}
+
+/* =========================
+   REVEAL ANIMATIONS
+   ========================= */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s var(--transition),transform .8s var(--transition)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+
+/* Counter */
+.counter{display:inline-block}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+@media (max-width:960px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-half{min-height:80vh;padding:120px 28px 70px}
+  .hero-divider{display:none}
+  .services-grid,.courier-services,.ba-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid,.how-grid{grid-template-columns:1fr 1fr}
+  .how-grid::before{display:none}
+  .map-layout{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .map-embed{min-height:320px}
+  .repairs-banner,.courier-banner{padding:40px 30px}
+  .floating-icons{display:none}
+  .order-form-wrap{padding:36px 24px}
+}
+@media (max-width:640px){
+  section{padding:70px 0}
+  .nav-menu{
+    position:fixed;top:0;right:-100%;
+    width:80%;max-width:320px;height:100vh;
+    background:#fff;flex-direction:column;
+    padding:90px 30px 30px;gap:20px;align-items:flex-start;
+    transition:right .4s var(--transition);
+    box-shadow:-10px 0 40px rgba(0,0,0,.15);
+  }
+  .nav-menu.open{right:0}
+  .nav-menu a{color:var(--repair-charcoal) !important;font-size:17px}
+  .menu-toggle{display:grid}
+  .nav-cta{padding:12px 20px}
+  .services-grid,.courier-services,.ba-grid,.why-grid,.how-grid{grid-template-columns:1fr}
+  .form-row,.order-form{grid-template-columns:1fr}
+  .order-submit{justify-self:stretch}
+  .hero-half{padding:110px 22px 60px}
+  .hero h1{font-size:34px}
+  .review-card{flex:0 0 85%}
+  .zone-list{grid-template-columns:1fr}
+  .wa-float{width:54px;height:54px;bottom:18px;right:18px}
+  .wa-float svg{width:26px;height:26px}
+  .banner-stats{gap:24px}
+  .banner-stat strong{font-size:26px}
+  .map-wrap{padding:28px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============== NAVIGATION ============== -->
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#home" class="logo">
+      <span class="logo-mark">PT</span>
+      PROF TECH
+    </a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#repairs">Repairs</a></li>
+      <li><a href="#courier">Courier</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://wa.me/254758349774" class="nav-cta" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        WhatsApp
+      </a></li>
+    </ul>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ============== HERO SPLIT ============== -->
+<section class="hero" id="home">
+  <div class="hero-half hero-repairs" onclick="location.href='#repairs'">
+    <div class="hero-shape"></div>
+    <div class="hero-content">
+      <span class="hero-label"><span class="dot"></span>PROF TECH REPAIRS</span>
+      <h1>Expert Phone &amp; Laptop Repairs</h1>
+      <p>Fast, reliable and affordable repair services you can trust. Certified technicians. Quality parts. Same-day service.</p>
+      <a href="#quote" class="hero-btn">GET REPAIR QUOTE <span class="arrow">→</span></a>
+    </div>
+  </div>
+
+  <div class="hero-half hero-courier" onclick="location.href='#courier'">
+    <div class="hero-shape"></div>
+    <div class="hero-content">
+      <span class="hero-label"><span class="dot"></span>PROF TECH COURIER</span>
+      <h1>Fast &amp; Reliable Courier Services</h1>
+      <p>Safe parcel delivery across Nairobi and beyond. Same-day pickup. Real-time tracking. Trusted by businesses.</p>
+      <a href="#order" class="hero-btn">PLACE DELIVERY ORDER <span class="arrow">→</span></a>
+    </div>
+  </div>
+
+  <div class="hero-divider"><span class="line-glow"></span></div>
+</section>
+
+<!-- ============== REPAIRS SECTION ============== -->
+<section class="repairs-section" id="repairs">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag repairs-tag">DEVICE REPAIRS</span>
+      <h2>Professional Device <span>Repair Services</span></h2>
+      <p>Restore your devices quickly and professionally. From cracked screens to water damage, we handle it all with precision and care.</p>
+    </div>
+
+    <!-- Banner -->
+    <div class="repairs-banner reveal">
+      <div class="repairs-banner-content">
+        <h3>Your Devices, In Expert Hands</h3>
+        <p>Over 5,000 devices repaired and counting. We use only quality parts and back every repair with a warranty.</p>
+        <div class="banner-stats">
+          <div class="banner-stat"><strong class="counter" data-target="5000">0</strong><span>DEVICES REPAIRED</span></div>
+          <div class="banner-stat"><strong class="counter" data-target="98">0</strong><span>% SATISFACTION</span></div>
+          <div class="banner-stat"><strong class="counter" data-target="24">0</strong><span>HOUR TURNAROUND</span></div>
+        </div>
+      </div>
+      <div class="floating-icons">
+        <div class="float-icon">📱</div>
+        <div class="float-icon">🔧</div>
+        <div class="float-icon">💻</div>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <div class="services-grid">
+      <div class="service-card reveal"><div class="service-icon">📱</div><h3>Screen Replacement</h3><p>Original-quality displays for all major phone and tablet brands.</p></div>
+      <div class="service-card reveal reveal-delay-1"><div class="service-icon">🔋</div><h3>Battery Replacement</h3><p>Restore your device's battery life with premium replacement cells.</p></div>
+      <div class="service-card reveal reveal-delay-2"><div class="service-icon">🔌</div><h3>Charging Port Repair</h3><p>Fix loose or non-functional charging ports quickly and affordably.</p></div>
+      <div class="service-card reveal"><div class="service-icon">💻</div><h3>Laptop Repair</h3><p>Hardware and software fixes for all laptop brands and models.</p></div>
+      <div class="service-card reveal reveal-delay-1"><div class="service-icon">⚙️</div><h3>Software Troubleshooting</h3><p>Resolve crashes, slow performance, and OS issues professionally.</p></div>
+      <div class="service-card reveal reveal-delay-2"><div class="service-icon">💧</div><h3>Water Damage Repair</h3><p>Advanced board-level repair for liquid-damaged devices.</p></div>
+      <div class="service-card reveal"><div class="service-icon">📷</div><h3>Camera Repair</h3><p>Fix blurry, broken, or non-functional front and rear cameras.</p></div>
+      <div class="service-card reveal reveal-delay-1"><div class="service-icon">🔊</div><h3>Speaker Repair</h3><p>Restore clear audio for calls, music, and media playback.</p></div>
+      <div class="service-card reveal reveal-delay-2"><div class="service-icon">🔓</div><h3>Phone Unlocking</h3><p>Safe, permanent network unlocking for all major carriers.</p></div>
+    </div>
+
+    <!-- Before/After -->
+    <div class="ba-section">
+      <div class="section-head reveal">
+        <span class="section-tag repairs-tag">RESULTS</span>
+        <h2>Before &amp; After <span>Gallery</span></h2>
+        <p>Drag the slider to see the transformation. Real repairs, real results.</p>
+      </div>
+      <div class="ba-grid">
+        <div class="ba-card reveal">
+          <div class="ba-slider" data-ba>
+            <img src="https://images.unsplash.com/photo-1585338447937-7082f8fc6694?auto=format&fit=crop&w=800&q=80" alt="After">
+            <div class="ba-after-wrap"><img src="https://images.unsplash.com/photo-1580910524929-4e093bd0ac90?auto=format&fit=crop&w=800&q=80" alt="Before"></div>
+            <div class="ba-handle"></div>
+            <span class="ba-label before">BEFORE</span>
+            <span class="ba-label after">AFTER</span>
+          </div>
+          <div class="ba-info"><h4>Cracked Screen</h4><span>⚡ 45 min</span></div>
+        </div>
+        <div class="ba-card reveal reveal-delay-1">
+          <div class="ba-slider" data-ba>
+            <img src="https://images.unsplash.com/photo-1601784551467-67f6447615a8?auto=format&fit=crop&w=800&q=80" alt="After">
+            <div class="ba-after-wrap"><img src="https://images.unsplash.com/photo-1588508065123-8851d4c5e1f4?auto=format&fit=crop&w=800&q=80" alt="Before"></div>
+            <div class="ba-handle"></div>
+            <span class="ba-label before">BEFORE</span>
+            <span class="ba-label after">AFTER</span>
+          </div>
+          <div class="ba-info"><h4>Charging Port</h4><span>⚡ 30 min</span></div>
+        </div>
+        <div class="ba-card reveal reveal-delay-2">
+          <div class="ba-slider" data-ba>
+            <img src="https://images.unsplash.com/photo-1512054502232-10a0a035d672?auto=format&fit=crop&w=800&q=80" alt="After">
+            <div class="ba-after-wrap"><img src="https://images.unsplash.com/photo-1587293852726-70cdb5bbc0e4?auto=format&fit=crop&w=800&q=80" alt="Before"></div>
+            <div class="ba-handle"></div>
+            <span class="ba-label before">BEFORE</span>
+            <span class="ba-label after">AFTER</span>
+          </div>
+          <div class="ba-info"><h4>Water Damage</h4><span>⚡ 24 hrs</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why choose us -->
+    <div class="section-head reveal">
+      <span class="section-tag repairs-tag">WHY US</span>
+      <h2>Why Choose <span>Prof Tech</span></h2>
+      <p>We combine technical expertise with honest service to deliver repairs you can trust.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal"><div class="why-icon">⚡</div><h3>Fast Turnaround</h3><p>Most repairs completed same-day. We value your time.</p></div>
+      <div class="why-card reveal reveal-delay-1"><div class="why-icon">💰</div><h3>Affordable Pricing</h3><p>Transparent quotes. No hidden fees. Best value in Nairobi.</p></div>
+      <div class="why-card reveal reveal-delay-2"><div class="why-icon">✨</div><h3>Quality Parts</h3><p>We use only premium, tested components for lasting repairs.</p></div>
+      <div class="why-card reveal reveal-delay-3"><div class="why-icon">👨‍🔧</div><h3>Expert Technicians</h3><p>Certified pros with years of hands-on experience.</p></div>
+    </div>
+
+    <!-- Repair reviews -->
+    <div id="reviews">
+      <div class="section-head reveal">
+        <span class="section-tag repairs-tag">TESTIMONIALS</span>
+        <h2>What Customers <span>Say</span></h2>
+        <p>Real reviews from real customers across Nairobi.</p>
+      </div>
+      <div class="reviews-wrap">
+        <div class="reviews-track" id="reviewsTrack">
+          <div class="review-card"><div class="review-head"><div class="review-avatar">JM</div><div><div class="review-name">James Mwangi</div><div class="review-date">2 days ago</div></div></div><div class="review-stars">★★★★★</div><p class="review-text">"Cracked my iPhone screen on a Friday evening. Prof Tech had it looking brand new by Saturday morning. Fast, clean work and fair pricing."</p></div>
+          <div class="review-card"><div class="review-head"><div class="review-avatar">AW</div><div><div class="review-name">Amina Wanjiku</div><div class="review-date">1 week ago</div></div></div><div class="review-stars">★★★★★</div><p class="review-text">"My laptop had water damage and two other shops said it was dead. These guys brought it back to life! Highly recommend their expertise."</p></div>
+          <div class="review-card"><div class="review-head"><div class="review-avatar">KO</div><div><div class="review-name">Kevin Ochieng</div><div class="review-date">2 weeks ago</div></div></div><div class="review-stars">★★★★★</div><p class="review-text">"Battery replacement done in under an hour. Phone feels new again. The team is professional and the workshop is super clean."</p></div>
+          <div class="review-card"><div class="review-head"><div class="review-avatar">SN</div><div><div class="review-name">Sarah Njeri</div><div class="review-date">3 weeks ago</div></div></div><div class="review-stars">★★★★★</div><p class="review-text">"Honest pricing, no pushy upsells. They fixed my charging port and even cleaned the phone for free. Will definitely come back."</p></div>
+          <div class="review-card"><div class="review-head"><div class="review-avatar">DK</div><div><div class="review-name">David Kariuki</div><div class="review-date">1 month ago</div></div></div><div class="review-stars">★★★★★</div><p class="review-text">"Best repair shop in CBD. Quick turnaround, quality parts, and they explain everything clearly before starting. Five stars!"</p></div>
+        </div>
+      </div>
+
+      <form class="review-form reveal" id="repairReviewForm">
+        <h3>Share Your Experience</h3>
+        <p>We'd love to hear about your repair experience.</p>
+        <div class="star-input" data-stars><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="form-row">
+          <div class="form-field"><input type="text" placeholder="Your Name" required></div>
+          <div class="form-field"><input type="tel" placeholder="Phone Number" required></div>
+        </div>
+        <div class="form-field" style="margin-bottom:14px"><textarea placeholder="Tell us about your experience..." required></textarea></div>
+        <button type="submit" class="cta-btn" style="width:100%;justify-content:center;background:var(--repair-blue)">Submit Review</button>
+      </form>
+    </div>
+
+    <!-- Repair CTA -->
+    <div class="repair-cta reveal" id="quote">
+      <h2>Need Your Device Fixed?</h2>
+      <p>Get an instant quote on WhatsApp. Fast response guaranteed.</p>
+      <a href="https://wa.me/254758349774?text=Hi%20Prof%20Tech%2C%20I%27d%20like%20a%20repair%20quote." class="cta-btn" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        GET A QUOTE ON WHATSAPP
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== COURIER SECTION ============== -->
+<section class="courier-section" id="courier">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag courier-tag">COURIER SERVICES</span>
+      <h2>Fast, Reliable &amp; <span>Affordable Delivery</span></h2>
+      <p>Delivering your parcels safely and on time. From documents to packages, we've got Nairobi covered.</p>
+    </div>
+
+    <!-- Courier banner -->
+    <div class="courier-banner reveal">
+      <div class="route-lines">
+        <svg viewBox="0 0 800 400" preserveAspectRatio="none">
+          <path class="route-path" d="M0,300 Q200,100 400,200 T800,100"/>
+          <path class="route-path" d="M0,100 Q300,300 600,150 T800,280" style="animation-delay:-5s"/>
+        </svg>
+      </div>
+      <div class="courier-banner-content">
+        <h3>Delivering What Matters, On Time</h3>
+        <p>Same-day pickup. Careful handling. Real-time updates. Your parcels are in safe hands from pickup to drop-off.</p>
+        <div class="banner-stats">
+          <div class="banner-stat"><strong class="counter" data-target="10000">0</strong><span>PARCELS DELIVERED</span></div>
+          <div class="banner-stat"><strong class="counter" data-target="99">0</strong><span>% ON-TIME RATE</span></div>
+          <div class="banner-stat"><strong class="counter" data-target="50">0</strong><span>+ ZONES COVERED</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <div class="courier-services">
+      <div class="courier-card reveal"><div class="courier-icon">📦</div><h3>Parcel Delivery</h3><p>Secure delivery for packages of all sizes across Nairobi.</p></div>
+      <div class="courier-card reveal reveal-delay-1"><div class="courier-icon">🏠</div><h3>Door-to-Door Delivery</h3><p>Convenient pickup from your location and delivery to the recipient.</p></div>
+      <div class="courier-card reveal reveal-delay-2"><div class="courier-icon">🔄</div><h3>Pickup &amp; Drop-off</h3><p>Flexible scheduling that works around your day.</p></div>
+      <div class="courier-card reveal"><div class="courier-icon">🏢</div><h3>Business Deliveries</h3><p>Reliable B2B delivery solutions with dedicated accounts.</p></div>
+      <div class="courier-card reveal reveal-delay-1"><div class="courier-icon">📄</div><h3>Document Delivery</h3><p>Confidential, fast handling of important documents.</p></div>
+      <div class="courier-card reveal reveal-delay-2"><div class="courier-icon">⚡</div><h3>Same-Day Delivery</h3><p>Urgent parcels delivered within hours, not days.</p></div>
+    </div>
+
+    <!-- How it works -->
+    <div class="section-head reveal">
+      <span class="section-tag courier-tag">HOW IT WORKS</span>
+      <h2>Three Simple <span>Steps</span></h2>
+      <p>Booking a delivery has never been easier.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-step reveal">
+        <div class="how-num">1</div>
+        <h3>Request Pickup</h3>
+        <p>Send us your details via WhatsApp or the form below. We'll confirm instantly.</p>
+      </div>
+      <div class="how-step reveal reveal-delay-1">
+        <div class="how-num">2</div>
+        <h3>We Collect Package</h3>
+        <p>Our rider arrives at your location promptly to pick up your parcel.</p>
+      </div>
+      <div class="how-step reveal reveal-delay-2">
+        <div class="how-num">3</div>
+        <h3>Delivered Safely</h3>
+        <p>Your parcel reaches its destination safely, with confirmation sent to you.</p>
+      </div>
+    </div>
+
+    <!-- Coverage map -->
+    <div class="map-wrap reveal">
+      <div class="map-layout">
+        <div class="map-svg">
+          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <!-- Background grid -->
+            <defs>
+              <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#F5A000" stroke-width=".3" opacity=".3"/>
+              </pattern>
+            </defs>
+            <rect width="400" height="400" fill="url(#grid)"/>
+
+            <!-- Routes -->
+            <path class="route-path" d="M200,200 Q150,120 100,100"/>
+            <path class="route-path" d="M200,200 Q260,130 320,90" style="animation-delay:-3s"/>
+            <path class="route-path" d="M200,200 Q130,220 80,260" style="animation-delay:-6s"/>
+            <path class="route-path" d="M200,200 Q270,240 330,290" style="animation-delay:-9s"/>
+            <path class="route-path" d="M200,200 Q200,290 210,350" style="animation-delay:-12s"/>
+            <path class="route-path" d="M200,200 Q130,180 60,180" style="animation-delay:-15s"/>
+
+            <!-- Zones -->
+            <circle class="zone" cx="200" cy="200" r="22"/>
+            <text class="zone-label" x="200" y="240">CBD</text>
+
+            <circle class="zone" cx="100" cy="100" r="18"/>
+            <text class="zone-label" x="100" y="135">Westlands</text>
+
+            <circle class="zone" cx="140" cy="170" r="16"/>
+            <text class="zone-label" x="140" y="155">Kilimani</text>
+
+            <circle class="zone" cx="240" cy="270" r="16"/>
+            <text class="zone-label" x="240" y="300">South B</text>
+
+            <circle class="zone" cx="280" cy="250" r="16"/>
+            <text class="zone-label" x="280" y="235">South C</text>
+
+            <circle class="zone" cx="330" cy="180" r="18"/>
+            <text class="zone-label" x="330" y="165">Embakasi</text>
+
+            <circle class="zone" cx="320" cy="90" r="18"/>
+            <text class="zone-label" x="320" y="75">Thika Road</text>
+
+            <circle class="zone" cx="280" cy="50" r="16"/>
+            <text class="zone-label" x="280" y="35">Ruiru</text>
+
+            <circle class="zone" cx="180" cy="60" r="16"/>
+            <text class="zone-label" x="180" y="45">Kiambu</text>
+
+            <circle class="zone" cx="80" cy="260" r="16"/>
+            <text class="zone-label" x="80" y="290">Lang'ata</text>
+
+            <!-- Center hub -->
+            <circle cx="200" cy="200" r="8" fill="#E67E22"/>
+            <circle cx="200" cy="200" r="14" fill="none" stroke="#E67E22" stroke-width="2" opacity=".4">
+              <animate attributeName="r" from="14" to="28" dur="2s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" from=".6" to="0" dur="2s" repeatCount="indefinite"/>
+            </circle>
+          </svg>
+        </div>
+        <div class="map-info">
+          <h3>Service Coverage</h3>
+          <p>We deliver across Nairobi and surrounding areas. If your location isn't listed, reach out — we likely cover it too.</p>
+          <ul class="zone-list">
+            <li>Nairobi CBD</li>
+            <li>Westlands</li>
+            <li>Kilimani</li>
+            <li>South B</li>
+            <li>South C</li>
+            <li>Embakasi</li>
+            <li>Thika Road</li>
+            <li>Ruiru</li>
+            <li>Kiambu</li>
+            <li>Lang'ata</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Order form -->
+    <div class="order-form-wrap reveal" id="order">
+      <h3>Place a Delivery Order</h3>
+      <p>Fill in the details and we'll confirm via WhatsApp instantly.</p>
+      <form class="order-form" id="orderForm">
+        <input type="text" placeholder="Your Name" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <input type="text" placeholder="Pickup Location" required>
+        <input type="text" placeholder="Delivery Location" required>
+        <textarea class="full" placeholder="Package Description (size, contents, special instructions)"></textarea>
+        <button type="submit" class="order-submit">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          SEND ORDER VIA WHATSAPP
+        </button>
+      </form>
+    </div>
+
+    <!-- Courier reviews -->
+    <div class="courier-reviews">
+      <div class="section-head reveal">
+        <span class="section-tag courier-tag">TESTIMONIALS</span>
+        <h2>Trusted by <span>Nairobi Businesses</span></h2>
+        <p>Real feedback from customers who rely on our courier service.</p>
+      </div>
+      <div class="reviews-wrap">
+        <div class="reviews-track">
+          <div class="review-card"><div class="review-head"><div class="review-avatar">LM</div><div><div class="review-name">Linda Muthoni</div><div class="review-date">3 days ago</div></div></div><div class="review-stars">★★★★★</div><p class="review-text">"I run an online boutique and Prof Tech handles all my deliveries. Always on time, always careful with packaging. My customers love them!"</p></div>
+          <div class="review-card"><div class="review-head"><div class="review-avatar">PK</div><div><div class="review-name">Peter Kamau</div><div class="review-date">1 week ago</div></div></div><div class="review-stars">★★★★★</div><p class="review-text">"Same-day delivery saved me during a last-minute client meeting. The rider was polite and professional. Will use again."</p></div>
+          <div class="review-card"><div class="review-head"><div class="review-avatar">FO</div><div><div class="review-name">Faith Otieno</div><div class="review-date">2 weeks ago</div></div></div><div class="review-stars">★★★★★</div><p class="review-text">"Affordable rates and the WhatsApp booking is so convenient. No more calling around for courier quotes."</p></div>
+          <div class="review-card"><div class="review-head"><div class="review-avatar">JN</div><div><div class="review-name">Joseph Ngugi</div><div class="review-date">3 weeks ago</div></div></div><div class="review-stars">★★★★★</div><p class="review-text">"Delivered important legal documents across town in under an hour. Super reliable and trustworthy."</p></div>
+          <div class="review-card"><div class="review-head"><div class="review-avatar">GW</div><div><div class="review-name">Grace Wambui</div><div class="review-date">1 month ago</div></div></div><div class="review-stars">★★★★★</div><p class="review-text">"Best courier in Nairobi. Fair prices, friendly riders, and my parcels always arrive in perfect condition."</p></div>
+        </div>
+      </div>
+
+      <form class="courier-review-form reveal" id="courierReviewForm">
+        <h3>Share Your Delivery Experience</h3>
+        <p>Tell us how we did.</p>
+        <div class="star-input" data-stars><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="form-row">
+          <div class="form-field"><input type="text" placeholder="Your Name" required></div>
+          <div class="form-field"><input type="tel" placeholder="Phone Number" required></div>
+        </div>
+        <div class="form-field" style="margin-bottom:14px"><textarea placeholder="Tell us about your delivery experience..." required></textarea></div>
+        <button type="submit" class="cta-btn" style="width:100%;justify-content:center;background:var(--courier-deep)">Submit Review</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CONTACT ============== -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag" style="background:rgba(255,255,255,.1);color:#fff">GET IN TOUCH</span>
+      <h2>Visit Us or Reach Out</h2>
+      <p>We're conveniently located in Nairobi CBD. Walk in, call, or message us anytime.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <a href="tel:+254758349774" class="contact-item reveal">
+          <div class="contact-ico">📞</div>
+          <div><h4>Phone</h4><p>0758 349 774</p></div>
+        </a>
+        <a href="mailto:techprofessional254@gmail.com" class="contact-item reveal reveal-delay-1">
+          <div class="contact-ico">📧</div>
+          <div><h4>Email</h4><p>techprofessional254@gmail.com</p></div>
+        </a>
+        <a href="https://maps.google.com/?q=Familia+Business+Center+Mfangano+Street+Nairobi" target="_blank" rel="noopener" class="contact-item reveal reveal-delay-2">
+          <div class="contact-ico">📍</div>
+          <div><h4>Location</h4><p>Familia Business Center<br>Along Mfangano Street<br>Nairobi CBD</p></div>
+        </a>
+        <div class="contact-item reveal reveal-delay-3">
+          <div class="contact-ico">🕒</div>
+          <div><h4>Hours</h4><p>Monday – Saturday<br>8:00 AM – 6:00 PM</p></div>
+        </div>
+      </div>
+
+      <div class="map-embed reveal">
+        <iframe src="https://www.google.com/maps?q=Mfangano+Street+Nairobi+CBD&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Prof Tech Location"></iframe>
+      </div>
+    </div>
+
+    <div class="footer">
+      © 2026 <a href="#home">PROF TECH</a> — Expert Repairs &amp; Courier Services. All rights reserved.
+    </div>
+  </div>
+</section>
+
+<!-- ============== WHATSAPP FLOAT ============== -->
+<a href="https://wa.me/254758349774?text=Hi%20Prof%20Tech%2C%20I%27d%20like%20to%20make%20an%20enquiry." class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<script>
+/* ============ NAV SCROLL ============ */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+/* ============ MOBILE MENU ============ */
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
+menuToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
+navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navMenu.classList.remove('open')));
+
+/* ============ REVEAL ON SCROLL ============ */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ============ COUNTERS ============ */
+const counterIO = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const el = e.target;
+      const target = +el.dataset.target;
+      const duration = 1800;
+      const start = performance.now();
+      const step = (now) => {
+        const p = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.floor(eased * target).toLocaleString();
+        if (p < 1) requestAnimationFrame(step);
+        else el.textContent = target.toLocaleString() + (target >= 1000 ? '+' : '');
+      };
+      requestAnimationFrame(step);
+      counterIO.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.counter').forEach(el => counterIO.observe(el));
+
+/* ============ BEFORE/AFTER SLIDERS ============ */
+document.querySelectorAll('[data-ba]').forEach(slider => {
+  const handle = slider.querySelector('.ba-handle');
+  const afterWrap = slider.querySelector('.ba-after-wrap');
+  let dragging = false;
+
+  const setPos = (clientX) => {
+    const rect = slider.getBoundingClientRect();
+    let x = clientX - rect.left;
+    x = Math.max(0, Math.min(rect.width, x));
+    const pct = (x / rect.width) * 100;
+    afterWrap.style.width = pct + '%';
+    handle.style.left = pct + '%';
+  };
+
+  const start = (e) => { dragging = true; setPos(e.touches ? e.touches[0].clientX : e.clientX); };
+  const move = (e) => { if (dragging) { setPos(e.touches ? e.touches[0].clientX : e.clientX); if (e.cancelable) e.preventDefault(); } };
+  const end = () => dragging = false;
+
+  slider.addEventListener('mousedown', start);
+  slider.addEventListener('touchstart', start, { passive: true });
+  window.addEventListener('mousemove', move);
+  window.addEventListener('touchmove', move, { passive: false });
+  window.addEventListener('mouseup', end);
+  window.addEventListener('touchend', end);
+});
+
+/* ============ STAR INPUTS ============ */
+document.querySelectorAll('[data-stars]').forEach(group => {
+  const stars = group.querySelectorAll('span');
+  let rating = 5;
+  const paint = (n) => stars.forEach((s, i) => s.classList.toggle('active', i < n));
+  paint(5);
+  stars.forEach((s, i) => {
+    s.addEventListener('click', () => { rating = i + 1; paint(rating); });
+    s.addEventListener('mouseenter', () => paint(i + 1));
+  });
+  group.addEventListener('mouseleave', () => paint(rating));
+  group.dataset.rating = 5;
+  group.addEventListener('click', () => group.dataset.rating = rating);
+});
+
+/* ============ FORMS → WHATSAPP ============ */
+const waBase = 'https://wa.me/254758349774?text=';
+
+document.getElementById('orderForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const [name, phone, pickup, drop, desc] = e.target.querySelectorAll('input, textarea');
+  const msg = `*New Delivery Order*%0A%0A*Name:* ${name.value}%0A*Phone:* ${phone.value}%0A*Pickup:* ${pickup.value}%0A*Delivery:* ${drop.value}%0A*Package:* ${desc.value || 'Not specified'}`;
+  window.open(waBase + msg, '_blank');
+});
+
+const handleReview = (form, type) => {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const [name, phone, text] = e.target.querySelectorAll('input, textarea');
+    const stars = form.querySelector('[data-stars]').dataset.rating;
+    const msg = `*New ${type} Review*%0A%0A*Rating:* ${'★'.repeat(+stars)}${'☆'.repeat(5 - +stars)}%0A*Name:* ${name.value}%0A*Phone:* ${phone.value}%0A*Review:* ${text.value}`;
+    window.open(waBase + msg, '_blank');
+  });
+};
+handleReview(document.getElementById('repairReviewForm'), 'Repair');
+handleReview(document.getElementById('courierReviewForm'), 'Courier');
+
+/* ============ PARALLAX HERO ============ */
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  if (y < window.innerHeight) {
+    document.querySelectorAll('.hero-half::before').length;
+    document.querySelectorAll('.hero-half').forEach(h => {
+      h.style.setProperty('--p', y * 0.3 + 'px');
+    });
+  }
+});
+</script>
+
+</body>
+</html>
